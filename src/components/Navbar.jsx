@@ -3,22 +3,22 @@ import { Link as RouterLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <Box bg="teal.500" px={4}>
+    <Box bg="brand.900" px={4} boxShadow="md">
       <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-        <Box color="white" fontWeight="bold">Crypto Loan</Box>
+        <Box color="brand.500" fontWeight="bold" fontSize="xl">Crypto Loan</Box>
         <Flex alignItems={"center"}>
           <RouterLink to="/">
-            <Button as={Link} colorScheme="teal" variant="ghost" mr={4}>
+            <Button as={Link} colorScheme="brand" variant="ghost" mr={4} color="brand.500">
               Home
             </Button>
           </RouterLink>
           <RouterLink to="/register">
-            <Button as={Link} colorScheme="teal" variant="ghost" mr={4}>
+            <Button as={Link} colorScheme="brand" variant="ghost" mr={4} color="brand.500">
               Register
             </Button>
           </RouterLink>
           <RouterLink to="/lend">
-            <Button as={Link} colorScheme="teal" variant="ghost" mr={4}>
+            <Button as={Link} colorScheme="brand" variant="ghost" mr={4} color="brand.500">
               Lend
             </Button>
           </RouterLink>

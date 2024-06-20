@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Box, Button, FormControl, FormLabel, Select, VStack, Text, Input } from "@chakra-ui/react";
+import { Box, Button, FormControl, FormLabel, Select, VStack, Text, Input, Heading } from "@chakra-ui/react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
+import { motion } from "framer-motion";
 
 const Lend = () => {
   const [isLent, setIsLent] = useState(false);
@@ -23,9 +24,9 @@ const Lend = () => {
   };
 
   return (
-    <Box p={4}>
+    <Box p={4} as={motion.div} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
       <VStack spacing={4} align="stretch">
-        <Text fontSize="2xl" textAlign="center">Lend Cryptocurrency</Text>
+        <Heading fontSize="2xl" textAlign="center" color="brand.500">Lend Cryptocurrency</Heading>
         {isLent ? (
           <Text textAlign="center" color="green.500">Lending successful!</Text>
         ) : (
@@ -34,8 +35,8 @@ const Lend = () => {
               <Form>
                 <VStack spacing={4} align="stretch">
                   <FormControl>
-                    <FormLabel htmlFor="cryptocurrency">Cryptocurrency</FormLabel>
-                    <Field as={Select} id="cryptocurrency" name="cryptocurrency">
+                    <FormLabel htmlFor="cryptocurrency" color="brand.600">Cryptocurrency</FormLabel>
+                    <Field as={Select} id="cryptocurrency" name="cryptocurrency" bg="brand.500" color="white">
                       <option value="">Select cryptocurrency</option>
                       <option value="bitcoin">Bitcoin</option>
                       <option value="ethereum">Ethereum</option>
@@ -44,11 +45,11 @@ const Lend = () => {
                     {errors.cryptocurrency && touched.cryptocurrency ? <Text color="red.500">{errors.cryptocurrency}</Text> : null}
                   </FormControl>
                   <FormControl>
-                    <FormLabel htmlFor="amount">Amount</FormLabel>
-                    <Field as={Input} id="amount" name="amount" type="number" />
+                    <FormLabel htmlFor="amount" color="brand.600">Amount</FormLabel>
+                    <Field as={Input} id="amount" name="amount" type="number" bg="brand.500" color="white" />
                     {errors.amount && touched.amount ? <Text color="red.500">{errors.amount}</Text> : null}
                   </FormControl>
-                  <Button type="submit" colorScheme="teal" isLoading={isSubmitting}>Lend</Button>
+                  <Button type="submit" colorScheme="brand" isLoading={isSubmitting} bg="brand.700" color="white" _hover={{ bg: "brand.600" }}>Lend</Button>
                 </VStack>
               </Form>
             )}

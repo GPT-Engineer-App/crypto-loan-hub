@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Box, Button, FormControl, FormLabel, Input, VStack, Text } from "@chakra-ui/react";
+import { Box, Button, FormControl, FormLabel, Input, VStack, Text, Heading } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 
@@ -25,9 +26,9 @@ const Register = () => {
   };
 
   return (
-    <Box p={4}>
+    <Box p={4} as={motion.div} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
       <VStack spacing={4} align="stretch">
-        <Text fontSize="2xl" textAlign="center">Register as a Lender</Text>
+        <Heading fontSize="2xl" textAlign="center" color="brand.500">Register as a Lender</Heading>
         {isRegistered ? (
           <Text textAlign="center" color="green.500">Registration successful!</Text>
         ) : (
@@ -36,21 +37,21 @@ const Register = () => {
               <Form>
                 <VStack spacing={4} align="stretch">
                   <FormControl>
-                    <FormLabel htmlFor="name">Name</FormLabel>
-                    <Field as={Input} id="name" name="name" />
+                    <FormLabel htmlFor="name" color="brand.600">Name</FormLabel>
+                    <Field as={Input} id="name" name="name" bg="brand.500" color="white" />
                     {errors.name && touched.name ? <Text color="red.500">{errors.name}</Text> : null}
                   </FormControl>
                   <FormControl>
-                    <FormLabel htmlFor="email">Email</FormLabel>
-                    <Field as={Input} id="email" name="email" type="email" />
+                    <FormLabel htmlFor="email" color="brand.600">Email</FormLabel>
+                    <Field as={Input} id="email" name="email" type="email" bg="brand.500" color="white" />
                     {errors.email && touched.email ? <Text color="red.500">{errors.email}</Text> : null}
                   </FormControl>
                   <FormControl>
-                    <FormLabel htmlFor="password">Password</FormLabel>
-                    <Field as={Input} id="password" name="password" type="password" />
+                    <FormLabel htmlFor="password" color="brand.600">Password</FormLabel>
+                    <Field as={Input} id="password" name="password" type="password" bg="brand.500" color="white" />
                     {errors.password && touched.password ? <Text color="red.500">{errors.password}</Text> : null}
                   </FormControl>
-                  <Button type="submit" colorScheme="teal" isLoading={isSubmitting}>Register</Button>
+                  <Button type="submit" colorScheme="brand" isLoading={isSubmitting} bg="brand.700" color="white" _hover={{ bg: "brand.600" }}>Register</Button>
                 </VStack>
               </Form>
             )}
