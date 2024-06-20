@@ -12,14 +12,14 @@ const Navbar = () => {
               Home
             </Button>
           </RouterLink>
-          <RouterLink to="/register">
+          <RouterLink to="/signup">
             <Button as={Link} colorScheme="brand" variant="ghost" mr={4} color="brand.500">
-              Register
+              Sign Up
             </Button>
           </RouterLink>
-          <RouterLink to="/lend">
+          <RouterLink to="/login">
             <Button as={Link} colorScheme="brand" variant="ghost" mr={4} color="brand.500">
-              Lend
+              Login
             </Button>
           </RouterLink>
         </Flex>
