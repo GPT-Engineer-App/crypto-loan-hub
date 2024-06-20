@@ -26,7 +26,7 @@ const Lend = () => {
   return (
     <Box p={4} as={motion.div} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
       <VStack spacing={4} align="stretch">
-        <Heading fontSize="2xl" textAlign="center" color="brand.500">Lend with Coincapital</Heading>
+        <Heading fontSize="2xl" textAlign="center" color="brand.500">Lend with Coin Capital</Heading>
         {isLent ? (
           <Text textAlign="center" color="green.500">Lending successful!</Text>
         ) : (
