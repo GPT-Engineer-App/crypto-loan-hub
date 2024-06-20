@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <Box bg="brand.900" px={4} boxShadow="md">
       <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-        <Box color="brand.500" fontWeight="bold" fontSize="xl">Crypto Loan</Box>
+        <Box color="brand.500" fontWeight="bold" fontSize="xl">Coincapital</Box>
         <Flex alignItems={"center"}>
           <RouterLink to="/">
             <Button as={Link} colorScheme="brand" variant="ghost" mr={4} color="brand.500">
